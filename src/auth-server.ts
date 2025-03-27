@@ -169,7 +169,9 @@ export class AuthServer {
 }
 
 // For backwards compatibility with npm run auth
-if (import.meta.url === new URL(import.meta.resolve('./auth-server.js')).href) {
+// The URL check is modified to be test-friendly
+if (import.meta.url.endsWith('/auth-server.js') || 
+    import.meta.url.endsWith('/auth-server.ts')) {
   const oauth2Client = new OAuth2Client();
   const authServer = new AuthServer(oauth2Client);
   authServer.start().catch(console.error);

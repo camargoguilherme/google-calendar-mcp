@@ -64,6 +64,8 @@ google-calendar-mcp/
 - `npm run build:watch` - Build TypeScript in watch mode for development
 - `npm run dev` - Start the server in development mode using ts-node
 - `npm run auth` - Start the authentication server for Google OAuth flow
+- `npm test` - Run the test suite
+- `npm run test:watch` - Run the test suite in watch mode
 
 ## Authentication
 
@@ -156,6 +158,19 @@ Along with the normal capabilities you would expect for a calendar integration y
    ```
 
 ## Development
+
+### Testing
+
+The project includes a test suite to verify core functionality and prevent regressions:
+
+- **Unit Tests**: Tests for individual components like TokenManager and AuthServer
+- **Schema Tests**: Validates Zod schemas used for input validation
+- **Simple Tests**: Basic functionality tests
+
+Run the tests with:
+```bash
+npm test
+```
 
 ### Troubleshooting
 
