@@ -23,6 +23,7 @@ RUN npm install --production
 
 # Copia todo o restante do projeto
 COPY . .
+COPY --from=builder /mcp/build ./build
 
 # Variáveis padrão (podem ser sobrescritas)
 ENV PORT=3001

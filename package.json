@@ -1,6 +1,6 @@
 {
   "name": "@gm-solucoes-tech/google-calendar-mcp",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Google Calendar MCP Server",
   "type": "module",
   "bin": {
