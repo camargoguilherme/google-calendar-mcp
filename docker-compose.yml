@@ -3,6 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    image: ghcr.io/camargoguilherme/mcp-google-calendar
     container_name: mcp-google-calendar
     environment:
       - MCP_USE_SSE=true
@@ -15,6 +16,4 @@ services:
     #   - "traefik.http.routers.mcp.rule=Host(`calendar.localhost`)"
     #   - "traefik.http.routers.mcp.entrypoints=web"
     #   - "traefik.http.services.mcp.loadbalancer.server.port=3000"
-    networks:
-      - traefik
     restart: unless-stopped

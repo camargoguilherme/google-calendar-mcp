@@ -35,4 +35,4 @@ ENV MCP_USE_SSE=true
 EXPOSE 3001
 
 # Inicia o servidor MCP
-CMD ["node", "buld/index.js"]
+CMD ["node", "build/index.js"]
