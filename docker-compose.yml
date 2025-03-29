@@ -1,0 +1,20 @@
+services:
+  mcp-google-calendar:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mcp-google-calendar
+    environment:
+      - MCP_USE_SSE=true
+      - MCP_SSE_ENDPOINT=/mcp
+      - PORT=3000
+      - GCP_SERVICE_ACCOUNT_JSON=${GCP_SERVICE_ACCOUNT_JSON}
+      - GCP_KEY_PATH=/app/gcp-service-account.json
+    # labels:
+    #   - "traefik.enable=true"
+    #   - "traefik.http.routers.mcp.rule=Host(`calendar.localhost`)"
+    #   - "traefik.http.routers.mcp.entrypoints=web"
+    #   - "traefik.http.services.mcp.loadbalancer.server.port=3000"
+    networks:
+      - traefik
+    restart: unless-stopped

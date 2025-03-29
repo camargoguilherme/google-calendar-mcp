@@ -1,16 +1,15 @@
 {
   "compilerOptions": {
-    "target": "ES2015",
-    "module": "Node16",
-    "moduleResolution": "Node16",
-    "outDir": "./build",
-    "rootDir": "./src",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
+    "target": "ES2020", // Versão JS gerada
+    "module": "NodeNext", // Ou "ESNext" para ESM
+    "moduleResolution": "nodenext",
+    "outDir": "./build", // Pasta de saída dos .js
+    "rootDir": "./src", // Pasta de origem dos .ts
+    "strict": true, // Ativa todas as checagens estritas
+    "esModuleInterop": true, // Permite importar pacotes CommonJS como ES Modules
     "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true
+    "skipLibCheck": true
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules"]
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
 }
