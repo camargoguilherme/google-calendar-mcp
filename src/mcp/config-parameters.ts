@@ -58,6 +58,10 @@ export const list_tools = [
           type: "string",
           description: "End time in ISO format (optional)",
         },
+        maxResults: {
+          type: "number",
+          description: "Maximum number of events to return",
+        },
       },
       required: ["calendarId"],
     },
@@ -91,11 +95,11 @@ export const list_tools = [
         },
         start: {
           type: "string",
-          description: "Start time in ISO format",
+          description: "Event start time (ISO string)",
         },
         end: {
           type: "string",
-          description: "End time in ISO format",
+          description: "Event end time (ISO string)",
         },
         location: {
           type: "string",
@@ -148,11 +152,11 @@ export const list_tools = [
         },
         start: {
           type: "string",
-          description: "New start time in ISO format",
+          description: "New start time (ISO string)",
         },
         end: {
           type: "string",
-          description: "New end time in ISO format",
+          description: "New end time (ISO string)",
         },
         location: {
           type: "string",

@@ -23,6 +23,7 @@ RUN npm install --production
 
 # Copia todo o restante do projeto
 COPY . .
+COPY --from=builder /mcp/build ./build
 
 # Variáveis padrão (podem ser sobrescritas)
 ENV PORT=3001
@@ -35,4 +36,4 @@ ENV MCP_USE_SSE=true
 EXPOSE 3001
 
 # Inicia o servidor MCP
-CMD ["node", "buld/index.js"]
+CMD ["node", "build/index.js"]

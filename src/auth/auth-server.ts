@@ -5,7 +5,7 @@ import { OAuth2Client } from 'google-auth-library';
 import open from 'open';
 import { Express } from 'express';
 import { TokenManager } from './token-manager.js';
-import { mcpHost } from '../config/variables.js';
+import { defaultGoogleOauthKeyPath, mcpHost } from '../config/variables.js';
 
 export class AuthServer {
   private server: express.Application | null = null;
@@ -18,12 +18,8 @@ export class AuthServer {
     this.server = server;
   }
 
-  private getKeysFilePath(): string {
-    return path.join(process.cwd(), 'gcp-oauth.keys.json');
-  }
-
   private async loadCredentials(): Promise<void> {
-    const content = await fs.readFile(this.getKeysFilePath(), 'utf-8');
+    const content = await fs.readFile(defaultGoogleOauthKeyPath, 'utf-8');
     const keys = JSON.parse(content);
     this.credentials = {
       client_id: keys.installed.client_id,
